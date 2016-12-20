@@ -9,7 +9,7 @@ using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using LMS.Providers;
-using LMS.Models;
+using LMS.Models.AccountModels;
 
 namespace LMS
 {

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace LMS.Models
 {
-    class Subject
+    public class Subject
     {
         [Key]
         public int SubjectID { get; set; }

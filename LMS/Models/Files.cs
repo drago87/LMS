@@ -7,7 +7,7 @@ using System.Text;
 
 namespace LMS.Models
 {
-    class Files
+    public class Files
     {
         [Key]
         public int FileID { get; set; }

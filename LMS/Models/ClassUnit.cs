@@ -7,7 +7,7 @@ using System.Text;
 
 namespace LMS.Models
 {
-    class ClassUnit
+    public class ClassUnit
     {
         [Key]
         public int ClassUnitID { get; set; }

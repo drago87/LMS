@@ -16,9 +16,13 @@ namespace LMS.Models
         public DateTime StartTime { get; set; }
         [DisplayName("Lesson Done")]
         public DateTime StopTime { get; set; }
-        [ForeignKey("Subject")]
+        [ForeignKey("subject")]
         public Subject SubjectID { get; set; }
-        [ForeignKey("ClassUnit")]
+        [ForeignKey("classUnit")]
         public ClassUnit ClassUnitID { get; set; }
+
+        public virtual Subject subject { get; set; }
+
+        public virtual ClassUnit classUnit { get; set; }
     }
 }
