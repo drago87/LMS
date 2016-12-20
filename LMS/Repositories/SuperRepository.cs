@@ -15,6 +15,10 @@ namespace LMS.Repositories
             context = new ApplicationDbContext();
         }
 
-
+        internal IEnumerable<ClassUnit> GetClassUnits()
+        {
+            var classunits = context.MyClassUnit;
+            return classunits;
+        }
     }
 }
