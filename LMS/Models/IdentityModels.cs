@@ -25,7 +25,11 @@ namespace LMS.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public DbSet<ClassUnit> MyProperty { get; set; }
+        public DbSet<ClassUnit> MyClassUnit { get; set; }
+        public DbSet<Files> MyFiles { get; set; }
+        public DbSet<Subject> MySubjects { get; set; }
+        public DbSet<Lesson> MyLessons { get; set; }
+        public DbSet<Folder> MyFolders { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -41,6 +45,7 @@ namespace LMS.Models
                 HasRequired(f => f.Submission)
                 .WithRequiredPrincipal()
                     .WillCascadeOnDelete(false);
+
         }
         
         public static ApplicationDbContext Create()
