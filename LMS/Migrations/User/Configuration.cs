@@ -16,6 +16,7 @@ namespace LMS.Migrations
             //MigrationsDirectory = @"Migrations\User";
         }
 
+
         protected override void Seed(LMS.Models.ApplicationDbContext context)
         {
             //Update-Database -ConfigurationTypeName LMS.Migrations.User.Configuration

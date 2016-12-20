@@ -28,10 +28,20 @@ namespace LMS.Models
         public DbSet<ClassUnit> MyProperty { get; set; }
 
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.HasDefaultSchema("User");
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ClassUnit>().
+                HasRequired(f => f.Shared)
+                .WithRequiredPrincipal()
+                    .WillCascadeOnDelete(false);
+
+
+            modelBuilder.Entity<ClassUnit>().
+                HasRequired(f => f.Submission)
+                .WithRequiredPrincipal()
+                    .WillCascadeOnDelete(false);
+        }
         
         public static ApplicationDbContext Create()
         {

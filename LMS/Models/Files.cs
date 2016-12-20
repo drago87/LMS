@@ -17,5 +17,9 @@ namespace LMS.Models
 
         [DisplayName("File Path")]
         public string FilePath { get; set; }
+
+        [Required]
+        public Folder Folder { get; set; }
+
     }
 }

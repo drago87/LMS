@@ -17,10 +17,9 @@ namespace LMS.Models
 
         public ICollection<ApplicationUser> Participants { get; set; }
 
-        //public Folder Folders { get; set; }
-        [ForeignKey("Folder")]
-        public int FolderID { get; set; }
+        public Folder Shared { get; set; }
 
-        public virtual ICollection<Folder> Folder { get; set; }
+        public Folder Submission { get; set; }
+
     }
 }

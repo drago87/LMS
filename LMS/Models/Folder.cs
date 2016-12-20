@@ -21,5 +21,7 @@ namespace LMS.Models
         //public Files _Files { get; set; }
 
         public virtual List<Files> Files { get; set; }
+
+
     }
 }
