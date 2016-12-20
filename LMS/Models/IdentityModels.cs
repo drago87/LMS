@@ -13,11 +13,21 @@ namespace LMS.Models
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
+            //Orginal
+            //var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
+            //Modified
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+            userIdentity.AddClaim(new Claim("TestUnit", this.TestUnit.ToString()));
+
             return userIdentity;
         }
+
+        //Extended Properties
+        public string TestUnit { get; set; }
     }
+
+    
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
