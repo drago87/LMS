@@ -14,5 +14,7 @@ namespace LMS.Models
         public string ClassName { get; set; }
         [ForeignKey("Folder")]
         public Folder Folders { get; set; }
+
+        public virtual List<Folder> Folder { get; set; }
     }
 }

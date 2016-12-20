@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,7 +12,9 @@ namespace LMS.Models
     {
         [Key]
         public int LessonID { get; set; }
+        [DisplayName("Lesson Start")]
         public DateTime StartTime { get; set; }
+        [DisplayName("Lesson Done")]
         public DateTime StopTime { get; set; }
         [ForeignKey("Subject")]
         public Subject SubjectID { get; set; }
