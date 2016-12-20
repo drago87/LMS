@@ -13,10 +13,12 @@ namespace LMS.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"Migrations\User";
         }
 
         protected override void Seed(LMS.Models.ApplicationDbContext context)
         {
+            //Update-Database -ConfigurationTypeName LMS.Migrations.User.Configuration
             if (!context.Roles.Any(r => r.Name == "Teacher"))
             {
                 var roleStore = new RoleStore<IdentityRole>(context);
