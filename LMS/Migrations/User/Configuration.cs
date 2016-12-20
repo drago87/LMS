@@ -1,6 +1,6 @@
 namespace LMS.Migrations
 {
-    using LMS.Models.AccountModels;
+    using LMS.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
@@ -8,15 +8,15 @@ namespace LMS.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<LMS.Models.AccountModels.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LMS.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            MigrationsDirectory = @"Migrations\User";
+            //MigrationsDirectory = @"Migrations\User";
         }
 
-        protected override void Seed(LMS.Models.AccountModels.ApplicationDbContext context)
+        protected override void Seed(LMS.Models.ApplicationDbContext context)
         {
             //Update-Database -ConfigurationTypeName LMS.Migrations.User.Configuration
             if (!context.Roles.Any(r => r.Name == "Teacher"))

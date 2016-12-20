@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace LMS.Models.AccountModels
+namespace LMS.Models
 {
     // Models used as parameters to AccountController actions.
 

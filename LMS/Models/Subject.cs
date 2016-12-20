@@ -11,6 +11,7 @@ namespace LMS.Models
     {
         [Key]
         public int SubjectID { get; set; }
+
         [DisplayName("Subject")]
         public string SubjectName { get; set; }
     }

@@ -11,8 +11,10 @@ namespace LMS.Models
     {
         [Key]
         public int FileID { get; set; }
+
         [DisplayName("File Name")]
         public string FileName { get; set; }
+
         [DisplayName("File Path")]
         public string FilePath { get; set; }
     }

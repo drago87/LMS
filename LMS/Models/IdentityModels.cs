@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
-namespace LMS.Models.AccountModels
+namespace LMS.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -24,6 +25,13 @@ namespace LMS.Models.AccountModels
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<ClassUnit> MyProperty { get; set; }
+
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.HasDefaultSchema("User");
+        //}
         
         public static ApplicationDbContext Create()
         {
