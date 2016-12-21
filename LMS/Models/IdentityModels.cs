@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace LMS.Models
 {
@@ -18,13 +19,13 @@ namespace LMS.Models
             //Modified
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
-            userIdentity.AddClaim(new Claim("TestUnit", this.TestUnit.ToString()));
+            userIdentity.AddClaim(new Claim("Classunit", this.Classunit.ToString()));
 
             return userIdentity;
         }
 
         //Extended Properties
-        public string TestUnit { get; set; }
+        public List<ClassUnit> Classunit { get; set; }
     }
 
     

@@ -11,7 +11,7 @@ namespace LMS.Extensions
     {
         public static string GetOrganizationId(this IIdentity identity)
         {
-            var claim = ((ClaimsIdentity)identity).FindFirst("TestUnit");
+            var claim = ((ClaimsIdentity)identity).FindFirst("Classunit");
             //// Test for null to avoid issues during local testing
             return (claim != null) ? claim.Value : string.Empty;
             
