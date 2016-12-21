@@ -50,7 +50,14 @@ namespace LMS.Migrations
             userManager.Create(user1, "Test123!");
             userManager.Create(user2, "Test123!");
 
-            
+            // ClassUnit Seed
+            var klass1 = new ClassUnit { ClassName = "Grund1A" };
+            var klass3 = new ClassUnit { ClassName = "Grund3A" };
+            var klass2 = new ClassUnit { ClassName = "Grund5B" };
+            context.MyClassUnit.AddOrUpdate(c => c.ClassUnitID, klass1);
+            context.MyClassUnit.AddOrUpdate(c => c.ClassUnitID, klass2);
+            context.MyClassUnit.AddOrUpdate(c => c.ClassUnitID, klass3);
+
 
             ApplicationUser user1a = context.Users.FirstOrDefault(u => u.Email == "testLärare@test.com");
 
